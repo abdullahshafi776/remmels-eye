@@ -1,0 +1,38 @@
+.collectionHeader {
+  padding: 1rem 5rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    margin: 0;
+  }
+
+  > * {
+    margin: auto 0;
+  }
+
+  .back {
+    transition: 1s;
+
+    button {
+      &:hover {
+        filter: invert(1);
+      }
+    }
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .collectionTitle {
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-weight: 200;
+    }
+  }
+}

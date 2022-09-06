@@ -1,0 +1,165 @@
+.collecionsWrapper {
+  max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  padding: 5rem;
+  background: #333;
+  flex-wrap: wrap;
+
+  &.reverse {
+    flex-direction: row-reverse;
+
+    .collectionsTitle {
+
+      .titleContainer {
+        align-self: flex-end;
+      }
+
+      .description {
+        align-self: flex-end;
+      }
+
+      h1 {
+        text-align: right;
+      }
+    }
+  }
+
+  .collectionsTitle {
+    flex: 4;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    padding: 3rem;
+
+    .descriptionContainer {
+      flex: 2 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-content: flex-start;
+      gap: 3rem;
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        width: 75%;
+
+        p {
+          opacity: 0.8;
+          margin: 0;
+          text-align: justify;
+        }
+
+        button {
+          width: fit-content;
+          padding: 1rem 3rem;
+          height: auto;
+          border: 2px solid white;
+          background: transparent;
+          color: white;
+        }
+      }
+    }
+
+    .titleContainer {
+      flex: 1;
+
+      h1,
+      h2 {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 14pt;
+        color: #aaa;
+        font-weight: 300;
+      }
+
+      h2 {
+        color: white;
+        font-weight: 400;
+        font-size: 12rem;
+        line-height: 10rem;
+      }
+    }
+  }
+
+  .collectionsImages {
+    flex: 3;
+    height: 100%;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, .6);
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+  .collecionsWrapper {
+    max-height: unset;
+    height: auto;
+    padding: 2rem;
+  }
+
+  .collectionsTitle {
+    gap: 2rem;
+
+    .titleContainer {
+      h2 {
+        font-size: 4rem !important;
+        line-height: 3.5rem !important;
+      }
+
+      h1 {
+        font-size: 10px !important;
+      }
+    }
+  }
+
+  .collectionsImages {
+    img {
+      min-width: 300px;
+    }
+  }
+
+  .reverse {
+    flex-direction: initial !important;
+
+    .collectionsTitle {
+
+      .titleContainer {
+        align-self: initial !important;
+      }
+
+      .description {
+        align-self: initial !important;
+      }
+
+      h1 {
+        text-align: initial !important;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 992px) {
+  .collectionsTitle {
+    gap: 2rem;
+
+    .titleContainer {
+      h2 {
+        font-size: 4rem !important;
+        line-height: 3.5rem !important;
+      }
+    }
+  }
+}

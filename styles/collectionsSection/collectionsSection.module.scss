@@ -1,0 +1,27 @@
+.collectionsHeader {
+  padding: 4rem;
+  height: 100vh;
+
+  h2 {
+    color: white;
+    font-weight: 400;
+    text-shadow: 0 1px 1px black;
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .description {
+    margin: 0;
+    padding: 0 3rem;
+    color: white;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .collectionsHeader {
+    .description {
+      padding: 0;
+    }
+  }
+}

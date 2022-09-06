@@ -1,0 +1,158 @@
+.content {
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+
+  .gallery {
+    img {
+      box-shadow: 0 0 5px #555;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+  }
+
+  .itemDescription {
+    position: sticky;
+    top: 50px;
+    max-height: 200vh;
+    transition: 1s;
+  }
+
+  .productTitle {
+    font-size: 48px;
+    display: flex;
+    gap: 1rem;
+    text-transform: capitalize;
+
+    span {
+      font-family: Americana, serif !important;
+    }
+
+    .productName {
+      color: #333;
+    }
+
+    .productVariantName {
+      color: #888;
+    }
+  }
+
+  .productDescription {
+    p {
+      color: #555;
+    }
+  }
+
+  .productDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .detailContainer {
+      display: flex;
+      gap: 1rem;
+      border-left: 4px solid #26d226;
+      padding-left: .5rem;
+      text-transform: capitalize;
+
+      .detailName {
+        font-weight: 500;
+        color: #333;
+      }
+
+      .detailValue {
+        color: #777;
+      }
+    }
+  }
+
+  .productVariants {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+    .variantName {
+      text-transform: capitalize;
+
+      @mixin highlight {
+        transition: .75s;
+        background: #333;
+        color: white;
+        border-color: #333333;
+      }
+
+      &:hover {
+        @include highlight
+      }
+
+      &.selected {
+        @include highlight
+      }
+    }
+  }
+
+  .buttonsContainer {
+    button {
+      background: white;
+      color: #333;
+      box-shadow: 0 0 2px #333;
+      outline: none;
+      border: none;
+      padding: 1rem;
+    }
+
+    .prevButton {
+      position: absolute;
+      top: 50%;
+      left: 4rem;
+      transform: translate(-50%, -50%);
+    }
+
+    .nextButton {
+      position: absolute;
+      top: 50%;
+      right: 4rem;
+      transform: translate(50%, -50%);
+    }
+  }
+}
+
+.empty {
+  color: #333;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-width: 767px) {
+  .content {
+    padding: 2rem;
+
+    .itemDescription {
+      position: static;
+    }
+
+    .collectionProductRow {
+      gap: 4rem !important;
+      justify-content: center !important;
+    }
+
+    .productTitle {
+      font-size: 38px;
+      gap: initial;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .content {
+    .itemDescription {
+      position: static;
+      top: 0px;
+    }
+  }
+}

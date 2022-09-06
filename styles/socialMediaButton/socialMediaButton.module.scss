@@ -1,0 +1,59 @@
+.container {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 1000;
+
+  .button {
+    background: linear-gradient(top right, #5D2780, #813AD5);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 6px #5D2780;
+    cursor: pointer;
+    gap: 0;
+
+    .text {
+      flex: 1;
+      word-break: keep-all;
+      white-space: nowrap;
+      font-weight: 500;
+      overflow: hidden;
+      transition: .5s;
+      animation: test .5s;
+      max-width: 0;
+    }
+
+    &:hover {
+      gap: 1rem;
+
+      .text {
+        max-width: 200px;
+      }
+    }
+  }
+
+  .icon {
+    font-size: 20pt;
+  }
+}
+
+@keyframes test {
+  0% {
+    max-width: 200px;
+  }
+
+  50% {
+    max-width: 100px;
+    margin: 0 50px;
+  }
+
+  100% {
+    max-width: 0;
+    margin: initial;
+  }
+}

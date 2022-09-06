@@ -1,0 +1,21 @@
+.footer {
+  background: #eee;
+  color: #333;
+  border-top: 1px solid #ccc;
+
+  .contact {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 2rem;
+
+    span {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+}

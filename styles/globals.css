@@ -1,0 +1,396 @@
+:root {
+  --background-color-page: #333;
+}
+
+/*#a91d4a*/
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap");
+
+a,
+span,
+p {
+  color: inherit;
+  text-decoration: none;
+  font-family: Akzidenz, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Americana, serif !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#components-layout-demo-responsive .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.site-layout-sub-header-background {
+  background: #fff;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+.ant-carousel {
+  width: 100%;
+}
+
+.ant-carousel,
+.slick-slider,
+.slick-track,
+.slick-list {
+  height: 100%;
+}
+
+.slick-active>div:first-child {
+  height: 100%;
+}
+
+.react-multi-carousel-track .react-multi-carousel-item--active:nth-child(even) {
+  transform: scale(1.3);
+}
+
+.react-multi-carousel-track .react-multi-carousel-item--active:nth-child(3n) {
+  transform: scale(1.6);
+}
+
+@font-face {
+  font-family: "Americana";
+  src: url("/Americana.ttf");
+}
+
+@font-face {
+  font-family: "Akzidenz";
+  src: url("/Americana.otf");
+}
+
+.ant-modal-footer,
+.ant-modal-header,
+span.ant-modal-close-x {
+  display: none !important;
+}
+
+.app {
+  padding: 0px 10%;
+  font-family: "Americana";
+  /* font-family: "Akzidenz"; */
+}
+
+.ant-select-selector {
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 20%) !important;
+  /* border: none !important; */
+  border-radius: 8px !important;
+  display: flex;
+  padding-top: 2px !important;
+  align-items: center;
+  height: 40px !important;
+  color: #333740 !important;
+  border: none !important;
+}
+
+.silmo-img {
+  cursor: pointer;
+}
+
+.catalogue-link {
+  /* margin-left: 10px; */
+  color: #000;
+  font-size: 18px;
+}
+
+.catalogue-link:hover {
+  border: none !important;
+  text-decoration: underline;
+  background: #fff;
+  color: #333333;
+}
+
+.contact-text {
+  margin-top: 10px;
+}
+
+.contact-us-link {
+  padding: 12px;
+  border-radius: 11px;
+  margin-left: 16px;
+  color: #fff;
+  background: #000;
+  font-size: 16px;
+}
+
+.contact-us-link:hover {
+  color: #fff;
+}
+
+.our-mission {
+  font-size: 50px;
+  text-align: center;
+  margin: 10px;
+  color: #8f00ff;
+}
+
+.our-mission-text {
+  text-align: center;
+  font-size: 34px;
+  padding: 10px 175px;
+  line-height: 44px;
+  font-family: "Raleway", sans-serif;
+}
+
+.text-center {
+  text-align: center;
+  margin: 50px 0px 10px 0px;
+}
+
+.banner-img {
+  width: 100%;
+}
+
+.store-location {
+  display: flex;
+}
+
+.store-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 45%;
+  background: #ffffff;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+  padding: 35px 75px;
+}
+
+.country-head {
+  color: #8f00ff;
+  font-size: 50px;
+  margin: 30px;
+}
+
+.separator-line {
+  border: 1px solid #e0dcdc;
+}
+
+.store-deatil {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e0dcdc;
+}
+
+.rico-store {
+  border-bottom: 1px solid #e0dcdc;
+}
+
+.address {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  color: #5c5c5c;
+  font-family: "Akzidenz";
+}
+
+.map-img {
+  width: 100%;
+  height: 100%;
+}
+
+.store-country {
+  margin: 12px 0px;
+}
+
+.store-locations {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.store-cou {
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 35px;
+  color: #000000;
+}
+
+.store-btn {
+  padding: 8px 0px;
+  text-align: center;
+  margin-top: 9px;
+  margin-left: 16px;
+  border-radius: 11px;
+  color: #000;
+  font-size: 18px;
+}
+
+.store-btn:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.slimo-image {
+  margin-left: 16px;
+}
+
+.navbar_navbarActions__3AnSo {
+  margin-right: 0% !important;
+  margin-left: 16px;
+}
+
+@media (max-width: 1400px) {
+  .our-mission-text {
+    font-size: 19px;
+    padding: 0px;
+  }
+
+  .our-mission {
+    text-align: center;
+  }
+
+  .store-locations {
+    flex-wrap: wrap;
+  }
+
+  .store-details {
+    width: 100%;
+    padding: 20px 29px;
+  }
+}
+
+@media (max-width: 767px) {
+  .slimo-image {
+    width: 170px;
+  }
+
+  .app {
+    padding: 42% 10%;
+  }
+}
+
+.headroom-wrapper {
+  height: 160px !important;
+}
+
+.mobile-menu {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Americana" !important;
+  padding: 6px;
+}
+
+.mobile_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ant-menu-horizontal {
+  border-bottom: none !important;
+}
+
+ul.ant-menu.ant-menu-light.ant-menu-root.ant-menu-horizontal {
+  background: transparent !important;
+}
+
+
+
+.quote-left {
+  display: inline-block;
+  width: 25px;
+  margin-top: -18px;
+}
+
+.para {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.pac_target_input {
+  font-size: 1.5rem;
+  padding: 1.5rem 3.75rem 1.5rem 2.75rem;
+  background: #f2f2f2;
+  border: none;
+  font-weight: 300;
+  flex: 1;
+  width: 100%;
+}
+
+.pac_target_input:focus {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+.srch_list {
+  border-bottom: 0.5px solid #f2f2f2;
+  background-color: #fff;
+  width: 100%;
+  cursor: pointer;
+}
+
+.mark_png {
+  width: 12px;
+  height: auto;
+}
+
+.map_cont {
+  width: 100%;
+  height: 400px;
+  margin: 10px 0px;
+  filter: grayscale(100%);
+}
+
+.cluster {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.cluster img {
+  display: none;
+}
+
+.cluster div {
+  background-color: #000;
+  color: #fff !important;
+  border-radius: 50%;
+  width: 40px !important;
+  height: 40px;
+  line-height: 40px !important;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+.inp_div {
+  position: relative;
+}
+
+#home {
+  border: none;
+  background-color: transparent;
+  font-size: 40px;
+  color: #a0a0a0;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  top: 20%;
+}
+
+@media (min-width: 1200px) {
+  .mobile_menu {
+    display: none;
+  }
+}
