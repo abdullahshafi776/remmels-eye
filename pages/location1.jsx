@@ -12,8 +12,8 @@ import { Col, Row } from "antd"
 import useSupercluster from "use-supercluster"
 // import Mapp from "./mapp"
 // import { stores } from "./data"
-import { AimOutlined } from "antd"
-import { BiCurrentLocation } from "react-icons/bi"
+// import { AimOutlined } from "antd"
+import { BiCurrentLocation, BiRightArrowAlt } from "react-icons/bi"
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
@@ -313,8 +313,11 @@ const MyComponent = () => {
 
       setName(address)
       const val = stores.filter((shop) => shop.country == new_address)
-      console.log(val)
-      setShops(val)
+
+      const val1 = stores.filter((shop) => shop.country == "Puerto Rico")
+
+      val.length === 0 ? setShops(val1) : setShops(val)
+
       setCenter({ lat: Number(latitude), lng: Number(longitude) })
       setZoom(4)
       if (places.length == 0) {
@@ -478,6 +481,14 @@ const MyComponent = () => {
                                 {selected.tel}
                               </a>
                             </p>
+                            <a
+                              className={styles.lead}
+                              target='_blank'
+                              href={`https://www.google.com/maps?daddr=@${selected.lat},${selected.lng}`}
+                            >
+                              <p>Lead this way</p>
+                              <BiRightArrowAlt />
+                            </a>
                           </div>
                         </InfoWindow>
                       ) : null}
