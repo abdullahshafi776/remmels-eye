@@ -49,6 +49,16 @@
     margin-bottom: 5px;
 }
 
+.infodot {
+    display: flex;
+    align-items: center;
+
+    svg {
+        margin-right: 5px;
+        font-size: 10px;
+    }
+}
+
 .get_map {
     height: 400px;
     width: 100%;
@@ -72,6 +82,10 @@
     p {
         margin: 0;
     }
+}
+
+.tel {
+    text-decoration: underline;
 }
 
 

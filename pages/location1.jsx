@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from "react"
+import { BsDot } from "react-icons/bs"
+import { GoPrimitiveDot } from "react-icons/go"
 import {
   GoogleMap,
   useLoadScript,
@@ -9,16 +11,12 @@ import {
 import styles from "../styles/Location/location.module.scss"
 import {} from "@googlemaps/markerclusterer"
 import { Col, Row } from "antd"
-import useSupercluster from "use-supercluster"
-// import Mapp from "./mapp"
-// import { stores } from "./data"
-// import { AimOutlined } from "antd"
 import { BiCurrentLocation, BiRightArrowAlt } from "react-icons/bi"
-import PlacesAutocomplete, {
-  geocodeByAddress,
-  getLatLng,
-} from "react-places-autocomplete"
-import { Cluster } from "@react-google-maps/marker-clusterer"
+// import PlacesAutocomplete, {
+//   geocodeByAddress,
+//   getLatLng,
+// } from "react-places-autocomplete"
+// import { Cluster } from "@react-google-maps/marker-clusterer"
 
 const options = {
   disableDefaultUI: true,
@@ -286,82 +284,30 @@ const stores = [
 
 const MyComponent = () => {
   const [libraries] = useState(["places"])
-  const mapref = useRef()
+  // const mapref = useRef()
   const [name, setName] = useState("")
-  const [address, setAddress] = useState("")
+  // const [address, setAddress] = useState("")
   const [zoom, setZoom] = useState(2)
-  const [bounds, setBounds] = useState(null)
+  // const [bounds, setBounds] = useState(null)
 
-  function initAutocomplete() {
-    // Create the search box and link it to the UI element.
-    const input = document.getElementById("pac-input")
-    const searchBox = new google.maps.places.SearchBox(input)
+  const [selected, setSelected] = useState(null)
+  const [shops, setShops] = useState([])
 
-    searchBox.addListener("places_changed", () => {
-      const places = searchBox.getPlaces()
-
-      // console.log(places)
-      var latitude = Number(places[0].geometry.location.lat())
-      var longitude = Number(places[0].geometry.location.lng())
-
-      var address = places[0].formatted_address
-      var new_address = places[0].address_components
-        ? places[0].address_components[places[0].address_components.length - 1]
-            .long_name
-        : places[0].formatted_address
-
-      setName(address)
-      const val = stores.filter((shop) => shop.country == new_address)
-
-      const val1 = stores.filter((shop) => shop.country == "Puerto Rico")
-
-      val.length === 0 ? setShops(val1) : setShops(val)
-
-      setCenter({ lat: Number(latitude), lng: Number(longitude) })
-      setZoom(4)
-      if (places.length == 0) {
-        return
-      }
-    })
-  }
+  const [center, setCenter] = useState({
+    lat: parseFloat(15.4542),
+    lng: parseFloat(18.7322),
+  })
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyDsbaiwJKfNNSgsRiZBFkXdzxHnJTfcuRw",
     libraries: libraries,
   })
-  const [coordinates, setCoordinates] = React.useState({
-    lat: 15.4542,
-    lng: 18.7322,
-  })
-
-  const [center, setCenter] = React.useState({
-    lat: parseFloat(coordinates.lat),
-    lng: parseFloat(coordinates.lng),
-  })
-
-  const [selected, setSelected] = useState(null)
-  const [shops, setShops] = useState([])
-
-  const handleSelect = async (value) => {
-    const results = await geocodeByAddress(value)
-    const latLng = await getLatLng(results[0])
-    setAddress(value)
-    setCoordinates(latLng)
-    setCenter(latLng)
-    setZoom(4)
-  }
 
   const searchlocation = (latitude, longitude) => {
     setCenter({ lat: latitude, lng: longitude })
     setZoom(16)
   }
 
-  // const sendcountry = (c) => {
-  //   const result = stores.filter((e) => {
-  //     return e.country == c
-  //   })
-  //   setShops(result)
-  // }
   const setlocation = (shop) => {
     setSelected(shop)
   }
@@ -376,6 +322,7 @@ const MyComponent = () => {
 
         setCenter({ lat: Number(pos.lat), lng: Number(pos.lng) })
         setZoom(4)
+
         const val = stores.filter((shop) => shop.country == "Puerto Rico")
         setShops(val)
 
@@ -397,15 +344,52 @@ const MyComponent = () => {
     }
   }
 
-  useEffect(() => {
-    initAutocomplete()
-  })
+  const initAutocomplete = () => {
+    // Create the search box and link it to the UI element.
+    const input = document.getElementById("pac-input")
+    const searchBox = new google.maps.places.SearchBox(input)
+
+    searchBox.addListener("places_changed", () => {
+      const places = searchBox.getPlaces()
+
+      // console.log(places)
+
+      if (places.length !== 0) {
+        var latitude = Number(places[0].geometry.location.lat())
+        var longitude = Number(places[0].geometry.location.lng())
+
+        var address = places[0].formatted_address
+        var new_address = places[0].address_components
+          ? places[0].address_components[
+              places[0].address_components.length - 1
+            ].long_name
+          : places[0].formatted_address
+
+        setName(address)
+        const val = stores.filter((shop) => shop.country == new_address)
+
+        const val1 = stores.filter((shop) => shop.country == "Puerto Rico")
+
+        val.length === 0 ? setShops(val1) : setShops(val)
+
+        setCenter({ lat: Number(latitude), lng: Number(longitude) })
+        setZoom(4)
+      }
+      // if (places.length == 0) {
+      //   return
+      // }
+    })
+  }
 
   useEffect(() => {
     setTimeout(() => {
       nav()
     }, 3000)
   }, [])
+
+  // useEffect(() => {
+  //   initAutocomplete()
+  // }, [])
 
   return (
     <>
@@ -415,7 +399,6 @@ const MyComponent = () => {
             <Row>
               <Col lg={24} md={24} sm={24} xs={24}>
                 <div className='para'>
-                  {/* <Mapp handleKeyDown={handleKeyDown} /> */}
                   <div className='inp_div'>
                     <input
                       id='pac-input'
@@ -425,6 +408,8 @@ const MyComponent = () => {
                       name='name'
                       value={name}
                       onChange={(e) => setName(e.target.value)}
+                      onFocus={initAutocomplete}
+                      autoComplete='off'
                     />
                     <button id='home' onClick={nav}>
                       <BiCurrentLocation />
@@ -472,9 +457,11 @@ const MyComponent = () => {
                         >
                           <div>
                             <p>{selected.name}</p>
-                            <p>{selected.address}</p>
-                            <p>
-                              tel:
+                            <p className={styles.infodot}>
+                              <GoPrimitiveDot />
+                              {selected.address}
+                            </p>
+                            <p className={styles.tel}>
                               <a href={`tel: ${selected.tel}}`}>
                                 {" "}
                                 {selected.tel}
