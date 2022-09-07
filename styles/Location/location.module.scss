@@ -9,7 +9,7 @@
 
 .store_list {
     width: 100%;
-    max-width: 300px;
+    // max-width: 300px;
     background: #f0f0f0;
     padding: 0px 1rem;
     height: 100%;
@@ -54,6 +54,12 @@
     width: 100%;
     border: none;
     filter: grayscale(100%);
+}
+
+.resdiv {
+    width: 92%;
+    margin: 0 auto;
+    padding: 10px 0px;
 }
 
 

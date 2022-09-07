@@ -407,126 +407,114 @@ const MyComponent = () => {
 
   return (
     <>
-      <Row style={{ padding: "10px 0px" }} className={styles.map_row}>
-        <Col
-          lg={22}
-          offset={1}
-          md={24}
-          sm={24}
-          xs={24}
-          className={styles.md_col}
-        >
-          <Row gutter={{ xs: 8, sm: 8, lg: 16 }}>
-            <Col className='gutter-row' lg={16} md={24} sm={24} xs={24}>
-              <Row>
-                <Col lg={24} md={24} sm={24} xs={24}>
-                  <div className='para'>
-                    {/* <Mapp handleKeyDown={handleKeyDown} /> */}
-                    <div className='inp_div'>
-                      <input
-                        id='pac-input'
-                        className='pac_target_input'
-                        type='text'
-                        placeholder='Search Location'
-                        name='name'
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                      />
-                      <button id='home' onClick={nav}>
-                        <BiCurrentLocation />
-                      </button>
+      <div className={styles.resdiv}>
+        <Row gutter={{ xs: 8, sm: 8, lg: 16 }}>
+          <Col className='gutter-row' lg={18} md={24} sm={24} xs={24}>
+            <Row>
+              <Col lg={24} md={24} sm={24} xs={24}>
+                <div className='para'>
+                  {/* <Mapp handleKeyDown={handleKeyDown} /> */}
+                  <div className='inp_div'>
+                    <input
+                      id='pac-input'
+                      className='pac_target_input'
+                      type='text'
+                      placeholder='Search Location'
+                      name='name'
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                    <button id='home' onClick={nav}>
+                      <BiCurrentLocation />
+                    </button>
+                  </div>
+                  {isLoaded ? (
+                    <GoogleMap
+                      options={options}
+                      zoom={zoom}
+                      mapContainerClassName='map_cont'
+                      center={center}
+                    >
+                      <MarkerClusterer>
+                        {(clusterer) =>
+                          stores.map((shop) => (
+                            <Marker
+                              position={{
+                                lat: Number(shop.lat),
+                                lng: Number(shop.lng),
+                              }}
+                              key={shop.id}
+                              clusterer={clusterer}
+                              icon={{
+                                url: "./location_dark.png",
+                                scaledSize: new window.google.maps.Size(50, 50),
+                                origin: new window.google.maps.Point(0, 0),
+                                anchor: new window.google.maps.Point(25, 25),
+                              }}
+                              onClick={() => {
+                                setlocation(shop)
+                              }}
+                            />
+                          ))
+                        }
+                      </MarkerClusterer>
+                      {selected ? (
+                        <InfoWindow
+                          position={{
+                            lat: Number(selected.lat),
+                            lng: Number(selected.lng),
+                          }}
+                          onCloseClick={() => {
+                            setSelected(null)
+                          }}
+                        >
+                          <div>
+                            <p>{selected.name}</p>
+                            <p>{selected.address}</p>
+                            <p>
+                              tel:
+                              <a href={`tel: ${selected.tel}}`}>
+                                {" "}
+                                {selected.tel}
+                              </a>
+                            </p>
+                          </div>
+                        </InfoWindow>
+                      ) : null}
+                    </GoogleMap>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              </Col>
+            </Row>
+          </Col>
+          <Col className='gutter-row' lg={6} md={24} sm={24} xs={24}>
+            <div className={styles.store_cont}>
+              {shops.length === 0 ? (
+                <div className={styles.store_list}>
+                  <p>Search to find nearest stores.</p>
+                </div>
+              ) : (
+                shops.map((e) => {
+                  return (
+                    <div
+                      className={styles.store_listdiv}
+                      onClick={() => {
+                        searchlocation(Number(e.lat), Number(e.lng))
+                      }}
+                    >
+                      <p>{e.name}</p>
+                      <p>{e.address}</p>
+                      <p>{e.country}</p>
                     </div>
-                    {isLoaded ? (
-                      <GoogleMap
-                        options={options}
-                        zoom={zoom}
-                        mapContainerClassName='map_cont'
-                        center={center}
-                      >
-                        <MarkerClusterer>
-                          {(clusterer) =>
-                            stores.map((shop) => (
-                              <Marker
-                                position={{
-                                  lat: Number(shop.lat),
-                                  lng: Number(shop.lng),
-                                }}
-                                key={shop.id}
-                                clusterer={clusterer}
-                                icon={{
-                                  url: "./location_dark.png",
-                                  scaledSize: new window.google.maps.Size(
-                                    50,
-                                    50
-                                  ),
-                                  origin: new window.google.maps.Point(0, 0),
-                                  anchor: new window.google.maps.Point(25, 25),
-                                }}
-                                onClick={() => {
-                                  setlocation(shop)
-                                }}
-                              />
-                            ))
-                          }
-                        </MarkerClusterer>
-                        {selected ? (
-                          <InfoWindow
-                            position={{
-                              lat: Number(selected.lat),
-                              lng: Number(selected.lng),
-                            }}
-                            onCloseClick={() => {
-                              setSelected(null)
-                            }}
-                          >
-                            <div>
-                              <p>{selected.name}</p>
-                              <p>{selected.address}</p>
-                              <p>
-                                tel:
-                                <a href={`tel: ${selected.tel}}`}>
-                                  {" "}
-                                  {selected.tel}
-                                </a>
-                              </p>
-                            </div>
-                          </InfoWindow>
-                        ) : null}
-                      </GoogleMap>
-                    ) : (
-                      <></>
-                    )}
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-            <Col className='gutter-row' lg={8} md={24} sm={24} xs={24}>
-              <div className={styles.store_cont}>
-                {shops.length === 0 ? (
-                  <div className={styles.store_list}>
-                    <p>Search to find nearest stores.</p>
-                  </div>
-                ) : (
-                  shops.map((e) => {
-                    return (
-                      <div
-                        className={styles.store_listdiv}
-                        onClick={() => {
-                          searchlocation(Number(e.lat), Number(e.lng))
-                        }}
-                      >
-                        <p>{e.name}</p>
-                        <p>{e.address}</p>
-                        <p>{e.country}</p>
-                      </div>
-                    )
-                  })
-                )}
-              </div>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+                  )
+                })
+              )}
+            </div>
+          </Col>
+        </Row>
+      </div>
     </>
   )
 }
