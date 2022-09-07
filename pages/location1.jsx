@@ -300,7 +300,6 @@ const MyComponent = () => {
     searchBox.addListener("places_changed", () => {
       const places = searchBox.getPlaces()
 
-      console.log(places)
       // console.log(places)
       var latitude = Number(places[0].geometry.location.lat())
       var longitude = Number(places[0].geometry.location.lng())
