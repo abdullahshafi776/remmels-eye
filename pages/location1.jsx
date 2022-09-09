@@ -31,6 +31,8 @@ const stores = [
     address: "3575 NE 207 St #B6A, Aventura, FL 33180",
     tel: "305.354.2020",
     country: "United States",
+    lat: 25.969048843744964,
+    lng: -80.13027220584563,
   },
   {
     id: 2,
@@ -56,6 +58,8 @@ const stores = [
     address: "51 NE 40th St,Miami, FL 33137",
     tel: "786.431.5280",
     country: "United States",
+    lat: 25.926050120386915,
+    lng: -80.1552953363578,
   },
   {
     id: 5,
@@ -140,6 +144,8 @@ const stores = [
     address: "Calle Georgetti 38, Comerio 00782, Puerto Rico",
     tel: "+1 787 693 3283",
     country: "Puerto Rico",
+    lat: 18.21926576984875,
+    lng: -66.22560685767073,
   },
 
   // Brazil
@@ -151,6 +157,8 @@ const stores = [
       "SHIS Qi 28 CONJUNTO 6 CASA 12 LAGO SUL BRASÍLIA DF 71670260 BRASIL",
     tel: "+55 21991682522",
     country: "Brazil",
+    lat: -15.814704279727808,
+    lng: -47.81468779999999,
   },
 
   // Barbados
@@ -232,22 +240,28 @@ const stores = [
     id: 22,
     name: "Belisima Optician",
     address: "Shmuel HaNatziv St 4, Netanya, Israel",
-    tel: "",
+    tel: "+972 3-624-3555",
     country: "Israel",
+    lat: 32.3292341165143,
+    lng: 34.85674251349392,
   },
   {
     id: 23,
     name: "Belisima Optician",
     address: "Yosef Lishanski Blvd 9, Rishon LeTsiyon, Israel",
-    tel: "",
+    tel: "+972 3-624-3555",
     country: "Israel",
+    lat: 31.99020613945152,
+    lng: 34.76459569815249,
   },
   {
     id: 24,
     name: "Belisima Optician",
     address: "Yoseftal St 92, Bat Yam, Israel",
-    tel: "",
+    tel: "+972 3-624-3555",
     country: "Israel",
+    lat: 32.01543286886161,
+    lng: 34.756070740481775,
   },
 
   // Japan
@@ -279,6 +293,19 @@ const stores = [
     address: "Egnatia 124, Thessaloniki 546 22, Greece",
     tel: "+30 231 024 2007",
     country: "Greece",
+    lat: 40.63336901181343,
+    lng: 22.94883121349393,
+  },
+
+  // Poland
+  {
+    id: 28,
+    name: "OKULAROWNIA",
+    address: "UL. JÓZEFA WYBICKIEGO 98/58 87-100 TORUŃ POLAND",
+    tel: "+48 884 607 700",
+    country: "Poland",
+    lat: 53.02543863309232,
+    lng: 18.590557286506073,
   },
 ]
 
@@ -334,7 +361,6 @@ const MyComponent = () => {
 
           geocoder.geocode({ location: latlng }).then((response) => {
             if (response.results[0]) {
-              console.log(response.results[0].formatted_address)
               const haddrss = response.results[0].formatted_address
               setName(haddrss)
             }
@@ -352,7 +378,7 @@ const MyComponent = () => {
     searchBox.addListener("places_changed", () => {
       const places = searchBox.getPlaces()
 
-      // console.log(places)
+      console.log(places)
 
       if (places.length !== 0) {
         var latitude = Number(places[0].geometry.location.lat())
@@ -367,13 +393,20 @@ const MyComponent = () => {
 
         setName(address)
         const val = stores.filter((shop) => shop.country == new_address)
-
         const val1 = stores.filter((shop) => shop.country == "Puerto Rico")
 
         val.length === 0 ? setShops(val1) : setShops(val)
 
         setCenter({ lat: Number(latitude), lng: Number(longitude) })
-        setZoom(4)
+
+        if (address == "Barbados") {
+          setZoom(11)
+        } else {
+          setZoom(4)
+        }
+
+        console.log(places[0].geometry.viewport)
+        // setBounds(places[0].geometry.viewport)
       }
       // if (places.length == 0) {
       //   return
