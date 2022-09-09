@@ -505,7 +505,7 @@ const MyComponent = () => {
                               target='_blank'
                               href={`https://www.google.com/maps?daddr=@${selected.lat},${selected.lng}`}
                             >
-                              <p>Lead this way</p>
+                              <p>Directions</p>
                               <BiRightArrowAlt />
                             </a>
                           </div>
