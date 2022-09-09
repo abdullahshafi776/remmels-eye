@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react"
-import { BsDot } from "react-icons/bs"
 import { GoPrimitiveDot } from "react-icons/go"
 import {
   GoogleMap,
@@ -12,11 +11,6 @@ import styles from "../styles/Location/location.module.scss"
 import {} from "@googlemaps/markerclusterer"
 import { Col, Row } from "antd"
 import { BiCurrentLocation, BiRightArrowAlt } from "react-icons/bi"
-// import PlacesAutocomplete, {
-//   geocodeByAddress,
-//   getLatLng,
-// } from "react-places-autocomplete"
-// import { Cluster } from "@react-google-maps/marker-clusterer"
 
 const options = {
   disableDefaultUI: true,
@@ -88,6 +82,24 @@ const stores = [
     country: "United States",
     lat: 26.456915922442736,
     lng: -80.12435931534398,
+  },
+  {
+    id: 29,
+    name: "Planet Optical",
+    address: "10367 NW 41st St,Doral, FL 33178",
+    tel: "+1 (305) 846-7778",
+    country: "United States",
+    lat: 25.81225230488456,
+    lng: -80.36503918650605,
+  },
+  {
+    id: 30,
+    name: "Coral Eyes",
+    address: "Coral Eyes 1353 Coral Way, Miami, FL  33145",
+    tel: "+1 (305) 854-2388",
+    country: "United States",
+    lat: 25.75130232843454,
+    lng: -80.21752310000001,
   },
 
   // Puerto Rico
@@ -318,6 +330,7 @@ const MyComponent = () => {
   // const [bounds, setBounds] = useState(null)
 
   const [selected, setSelected] = useState(null)
+  const [noshop, setNoshop] = useState("Search to find nearest stores.")
   const [shops, setShops] = useState([])
 
   const [center, setCenter] = useState({
@@ -350,8 +363,8 @@ const MyComponent = () => {
         setCenter({ lat: Number(pos.lat), lng: Number(pos.lng) })
         setZoom(4)
 
-        const val = stores.filter((shop) => shop.country == "Puerto Rico")
-        setShops(val)
+        // const val = stores.filter((shop) => shop.country == "Puerto Rico")
+        // setShops(val)
 
         const geocoder = new google.maps.Geocoder()
         geocodeLatLng(geocoder)
@@ -393,10 +406,16 @@ const MyComponent = () => {
 
         setName(address)
         const val = stores.filter((shop) => shop.country == new_address)
-        const val1 = stores.filter((shop) => shop.country == "Puerto Rico")
+        // const val1 = stores.filter((shop) => shop.country == "Puerto Rico")
+        console.log("val", val)
+        // val.length === 0 ? setNoshop("No Shop in this area") : setShops(val)
 
-        val.length === 0 ? setShops(val1) : setShops(val)
-
+        if (val.length === 0) {
+          setShops(val)
+          setNoshop("No Shop in this area")
+        } else {
+          setShops(val)
+        }
         setCenter({ lat: Number(latitude), lng: Number(longitude) })
 
         if (address == "Barbados") {
@@ -405,7 +424,7 @@ const MyComponent = () => {
           setZoom(4)
         }
 
-        console.log(places[0].geometry.viewport)
+        // console.log(places[0].geometry.viewport)
         // setBounds(places[0].geometry.viewport)
       }
       // if (places.length == 0) {
@@ -523,7 +542,7 @@ const MyComponent = () => {
             <div className={styles.store_cont}>
               {shops.length === 0 ? (
                 <div className={styles.store_list}>
-                  <p>Search to find nearest stores.</p>
+                  <p>{noshop}</p>
                 </div>
               ) : (
                 shops.map((e) => {
