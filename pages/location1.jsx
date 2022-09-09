@@ -190,7 +190,7 @@ const stores = [
     address:
       "Glen Main Road Calliaqua VC0274 Box 1691 Kingstown St. Vincent & the Grenadines",
     tel: "(784) 457-5000",
-    country: "St Vincent & the Grenadines",
+    country: "St Vincent and the Grenadines",
     lat: 13.139713166478865,
     lng: -61.195018457672,
   },
