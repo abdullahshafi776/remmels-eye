@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { GoPrimitiveDot } from "react-icons/go"
 import {
   GoogleMap,
@@ -8,7 +8,6 @@ import {
   MarkerClusterer,
 } from "@react-google-maps/api"
 import styles from "../styles/Location/location.module.scss"
-import {} from "@googlemaps/markerclusterer"
 import { Col, Row } from "antd"
 import { BiCurrentLocation, BiRightArrowAlt } from "react-icons/bi"
 
@@ -75,15 +74,15 @@ const stores = [
     lat: 25.863422982293002,
     lng: -80.306987215344,
   },
-  {
-    id: 7,
-    name: "Eyewear Candy Optical",
-    address: "5062 W. Atlantic Ave. Delray Beach FL 33484",
-    tel: "+1 (561) 404-8353",
-    country: "United States",
-    lat: 26.456915922442736,
-    lng: -80.12435931534398,
-  },
+  // {
+  //   id: 7,
+  //   name: "Eyewear Candy Optical",
+  //   address: "5062 W. Atlantic Ave. Delray Beach FL 33484",
+  //   tel: "+1 (561) 404-8353",
+  //   country: "United States",
+  //   lat: 26.456915922442736,
+  //   lng: -80.12435931534398,
+  // },
   {
     id: 29,
     name: "Planet Optical",
@@ -129,6 +128,7 @@ const stores = [
     address:
       "La Sierra Town, Carr 172 km 20.6, Bo. Cañaboncito Caguas, 00727 PR",
     tel: "+1 (787) 286-8001",
+    phone: "+1 (787) 286-8802",
     country: "Puerto Rico",
     lat: 18.209202559824263,
     lng: -66.10415396092853,
@@ -146,7 +146,7 @@ const stores = [
     id: 12,
     name: "Anteojos Di Moda",
     address: "Metro Plaza, Caguas, Puerto Rico 00725",
-    tel: "",
+    tel: "+1 787-394-9990",
     country: "Puerto Rico",
     lat: 18.244531645929158,
     lng: -66.03972827442006,
@@ -214,7 +214,7 @@ const stores = [
     id: 18,
     name: "Óptica fornio",
     address: "José ellauri 657, Montevideo",
-    tel: "+1 598 2711 3231",
+    tel: "+598 2711 3231",
     country: "Uruguay",
     lat: -34.91852917490241,
     lng: -56.155996073015984,
@@ -223,7 +223,7 @@ const stores = [
     id: 19,
     name: "Óptica Briozzo",
     address: "San José 1260, Montevideo",
-    tel: "+1 598 2902 5051",
+    tel: "+598 2902 5051",
     country: "Uruguay",
     lat: -34.906613229589496,
     lng: -56.188870144176796,
@@ -232,7 +232,7 @@ const stores = [
     id: 20,
     name: "Enfoque Visión",
     address: "Av Brasil 2698, Montevideo",
-    tel: "+1 598 2707 6006",
+    tel: "+598 2707 6006",
     country: "Uruguay",
     lat: -34.90830823985922,
     lng: -56.15594294417999,
@@ -244,7 +244,8 @@ const stores = [
     id: 21,
     name: "Belisima Optician",
     address: "Carlebach St 39, Tel Aviv-Yafo, Israel",
-    tel: "+1 972 3-624-3555",
+    phone: "+972 50-447-8355",
+    tel: "+972 3-624-3555",
     country: "Israel",
     lat: 32.070559718250934,
     lng: 34.782387684655994,
@@ -253,7 +254,7 @@ const stores = [
     id: 22,
     name: "Belisima Optician",
     address: "Shmuel HaNatziv St 4, Netanya, Israel",
-    tel: "+1 972 3-624-3555",
+    tel: "+972 3-624-3555",
     country: "Israel",
     lat: 32.3292341165143,
     lng: 34.85674251349392,
@@ -262,7 +263,7 @@ const stores = [
     id: 23,
     name: "Belisima Optician",
     address: "Yosef Lishanski Blvd 9, Rishon LeTsiyon, Israel",
-    tel: "+1 972 3-624-3555",
+    tel: "+972 3-624-3555",
     country: "Israel",
     lat: 31.99020613945152,
     lng: 34.76459569815249,
@@ -271,7 +272,7 @@ const stores = [
     id: 24,
     name: "Belisima Optician",
     address: "Yoseftal St 92, Bat Yam, Israel",
-    tel: "+1 972 3-624-3555",
+    tel: "+972 3-624-3555",
     country: "Israel",
     lat: 32.01543286886161,
     lng: 34.756070740481775,
@@ -392,23 +393,29 @@ const MyComponent = () => {
     searchBox.addListener("places_changed", () => {
       const places = searchBox.getPlaces()
 
-      console.log(places)
+      // console.log(places)
 
       if (places.length !== 0) {
         var latitude = Number(places[0].geometry.location.lat())
         var longitude = Number(places[0].geometry.location.lng())
 
         var address = places[0].formatted_address
-        var new_address = places[0].address_components
-          ? places[0].address_components[
+        // var new_address = places[0].address_components
+        //   ? places[0].address_components[
+        //       places[0].address_components.length - 1
+        //     ].long_name
+        //   : places[0].formatted_address
+
+        var new_address = places[0].formatted_address
+          ? places[0].formatted_address
+          : places[0].address_components[
               places[0].address_components.length - 1
             ].long_name
-          : places[0].formatted_address
 
         setName(address)
         const val = stores.filter((shop) => shop.country == new_address)
         // const val1 = stores.filter((shop) => shop.country == "Puerto Rico")
-        console.log("val", val)
+        // console.log("val", val)
         // val.length === 0 ? setNoshop("No Shop in this area") : setShops(val)
 
         if (val.length === 0) {
@@ -515,10 +522,27 @@ const MyComponent = () => {
                               {selected.address}
                             </p>
                             <p className={styles.tel}>
-                              <a href={`tel: ${selected.tel}}`}>
-                                {" "}
-                                {selected.tel}
-                              </a>
+                              {selected.phone ? (
+                                <>
+                                  <div style={{ marginBottom: "5px" }}>
+                                    <a href={`tel: ${selected.tel}}`}>
+                                      {" "}
+                                      {selected.tel}
+                                    </a>
+                                  </div>
+                                  <div>
+                                    <a href={`tel: ${selected.phone}}`}>
+                                      {" "}
+                                      {selected.phone}
+                                    </a>
+                                  </div>
+                                </>
+                              ) : (
+                                <a href={`tel: ${selected.tel}}`}>
+                                  {" "}
+                                  {selected.tel}
+                                </a>
+                              )}
                             </p>
                             <a
                               className={styles.lead}
