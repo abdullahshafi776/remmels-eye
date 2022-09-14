@@ -426,10 +426,13 @@ const MyComponent = () => {
         }
         setCenter({ lat: Number(latitude), lng: Number(longitude) })
 
-        if (address == "Barbados" || "St Vincent and the Grenadines") {
+        if (
+          address == "Barbados" ||
+          address == "St Vincent and the Grenadines"
+        ) {
           setZoom(9)
         } else {
-          setZoom(11)
+          setZoom(4)
         }
 
         // console.log(places[0].geometry.viewport)
