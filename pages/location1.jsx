@@ -175,16 +175,6 @@ const stores = [
   },
 
   // Barbados
-
-  {
-    id: 15,
-    name: "Belleville Optical",
-    address: "#7 Chelwood 8th Avenue, Belleville St.Michael Barbados",
-    tel: "+1 246 437 3564",
-    country: "Barbados",
-    lat: 13.09814,
-    lng: -59.60203,
-  },
   {
     id: 16,
     name: "Insight Optical",
@@ -195,6 +185,16 @@ const stores = [
     lng: -59.6190027,
   },
 
+  {
+    id: 15,
+    name: "Belleville Optical",
+    address: "#7 Chelwood 8th Avenue, Belleville St.Michael Barbados",
+    tel: "+1 246 437 3564",
+    country: "Barbados",
+    lat: 13.09814,
+    lng: -59.60203,
+  },
+
   // St. Vincent & the Grenadines
 
   {
@@ -202,7 +202,7 @@ const stores = [
     name: "OSV GROUP",
     address:
       "Glen Main Road Calliaqua VC0274 Box 1691 Kingstown St. Vincent & the Grenadines",
-    tel: "+1 (784) 457-5000",
+    tel: "+1 784-457-5000",
     country: "St Vincent and the Grenadines",
     lat: 13.139713166478865,
     lng: -61.195018457672,
@@ -254,7 +254,7 @@ const stores = [
     id: 22,
     name: "Belisima Optician",
     address: "Shmuel HaNatziv St 4, Netanya, Israel",
-    tel: "+972 3-624-3555",
+    tel: "+972 50-447-8355",
     country: "Israel",
     lat: 32.3292341165143,
     lng: 34.85674251349392,
@@ -263,7 +263,7 @@ const stores = [
     id: 23,
     name: "Belisima Optician",
     address: "Yosef Lishanski Blvd 9, Rishon LeTsiyon, Israel",
-    tel: "+972 3-624-3555",
+    tel: "+972 50-447-8355",
     country: "Israel",
     lat: 31.99020613945152,
     lng: 34.76459569815249,
@@ -272,7 +272,7 @@ const stores = [
     id: 24,
     name: "Belisima Optician",
     address: "Yoseftal St 92, Bat Yam, Israel",
-    tel: "+972 3-624-3555",
+    tel: "+972 50-447-8355",
     country: "Israel",
     lat: 32.01543286886161,
     lng: 34.756070740481775,
@@ -296,7 +296,7 @@ const stores = [
     id: 26,
     name: "OPTIC SHOP",
     address: "Leoforos Irinis 42, Ilioupoli PO 16345",
-    tel: "+30 210 9918722",
+    tel: "+30 21 0991 8722",
     country: "Greece",
     lat: 37.933533524698554,
     lng: 23.756065099999997,
