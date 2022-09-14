@@ -108,7 +108,7 @@ const stores = [
     id: 8,
     name: "Eyewear Shop",
     address: "The Market Place at Montehiedra  Local 4B San Juan PR 00926",
-    tel: "+1 787-520-8884",
+    tel: "+1 (787) 286-8001",
     country: "Puerto Rico",
     lat: 18.336701609897467,
     lng: -66.06983208650803,
@@ -426,18 +426,15 @@ const MyComponent = () => {
         }
         setCenter({ lat: Number(latitude), lng: Number(longitude) })
 
-        if (address == "Barbados") {
-          setZoom(11)
+        if (address == "Barbados" || "St Vincent and the Grenadines") {
+          setZoom(9)
         } else {
-          setZoom(4)
+          setZoom(6)
         }
 
         // console.log(places[0].geometry.viewport)
         // setBounds(places[0].geometry.viewport)
       }
-      // if (places.length == 0) {
-      //   return
-      // }
     })
   }
 
@@ -446,10 +443,6 @@ const MyComponent = () => {
       nav()
     }, 3000)
   }, [])
-
-  // useEffect(() => {
-  //   initAutocomplete()
-  // }, [])
 
   return (
     <>
@@ -577,6 +570,7 @@ const MyComponent = () => {
                       onClick={() => {
                         searchlocation(Number(e.lat), Number(e.lng))
                       }}
+                      key={e.id}
                     >
                       <p>{e.name}</p>
                       <p>{e.address}</p>
