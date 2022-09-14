@@ -429,7 +429,7 @@ const MyComponent = () => {
         if (address == "Barbados" || "St Vincent and the Grenadines") {
           setZoom(9)
         } else {
-          setZoom(6)
+          setZoom(11)
         }
 
         // console.log(places[0].geometry.viewport)
