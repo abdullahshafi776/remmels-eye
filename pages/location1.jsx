@@ -29,11 +29,11 @@ const stores = [
   {
     id: 4,
     name: "Oberti Luxury World",
-    address: "51 NE 40th St,Miami, FL 33137",
+    address: "51 NE 40th St,Miami, FL 33137, EE. UU.",
     tel: "+1 786.431.5280",
     country: "United States",
-    lat: 25.926050120386915,
-    lng: -80.1552953363578,
+    lat: 25.813787852521386,
+    lng: -80.19446488650607,
   },
 
   {
@@ -67,12 +67,11 @@ const stores = [
   {
     id: 6,
     name: "Daluz Optical",
-    address:
-      "4528 W 12th Ave, Hialeah, FL 33012, Miami, Florida Twin Towers Shopping Center",
+    address: "4528 W 12th Ave, Hialeah, FL 33012",
     tel: "+1 305-557-6777",
     country: "United States",
-    lat: 25.863422982293002,
-    lng: -80.306987215344,
+    lat: 25.863230990415992,
+    lng: -80.30694577236908,
   },
   // {
   //   id: 7,
@@ -201,7 +200,7 @@ const stores = [
     id: 17,
     name: "OSV GROUP",
     address:
-      "Glen Main Road Calliaqua VC0274 Box 1691 Kingstown St. Vincent & the Grenadines",
+      "Glen Road, Calliaqua, Saint George VC VC0274, Calliaqua, St. Vincent & The Grenadines",
     tel: "+1 784-457-5000",
     country: "St Vincent and the Grenadines",
     lat: 13.139713166478865,
@@ -295,7 +294,7 @@ const stores = [
   {
     id: 26,
     name: "OPTIC SHOP",
-    address: "Leoforos Irinis 42, Ilioupoli PO 16345",
+    address: "Leof. Irinis 42, Ilioupoli 163 45,Greece",
     tel: "+30 21 0991 8722",
     country: "Greece",
     lat: 37.933533524698554,
