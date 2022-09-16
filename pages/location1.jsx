@@ -25,6 +25,8 @@ const stores = [
     country: "United States",
     lat: 26.350625060095226,
     lng: -80.081210871164,
+    mapLink:
+      "https://www.google.com/maps/place/Eye+Catchers+Optique/@26.3504472,-80.0812216,15z/data=!4m2!3m1!1s0x0:0x629fc74b807ef659?sa=X&ved=2ahUKEwiTso_4t5f6AhXIHLkGHQq4BL0Q_BJ6BAg9EAU",
   },
   {
     id: 4,
@@ -34,6 +36,8 @@ const stores = [
     country: "United States",
     lat: 25.813787852521386,
     lng: -80.19446488650607,
+    mapLink:
+      "https://www.google.com/maps/place/Daniel+Oberti+Luxury+World/@25.8135802,-80.1944327,15z/data=!4m2!3m1!1s0x0:0x770ad470e17fd395?sa=X&ved=2ahUKEwjAjvfnt5f6AhUFIrkGHeLvAksQ_BJ6BAhAEAU",
   },
 
   {
@@ -44,6 +48,8 @@ const stores = [
     country: "United States",
     lat: 25.969048843744964,
     lng: -80.13027220584563,
+    mapLink:
+      "https://www.google.com/maps/place/Optik+USA/@25.9689154,-80.1301982,20.25z/data=!4m5!3m4!1s0x88d9ad32692f1ad9:0x6fa65582f71a00ad!8m2!3d25.9688616!4d-80.1302533",
   },
   {
     id: 2,
@@ -53,6 +59,8 @@ const stores = [
     country: "United States",
     lat: 25.725613534079642,
     lng: -80.26280903068287,
+    mapLink:
+      "https://www.google.com/maps/place/Eyeglass+Place+Inc/@25.7253574,-80.2627232,15z/data=!4m2!3m1!1s0x0:0xa2d41e9dc78a186c?sa=X&ved=2ahUKEwjapPfYt5f6AhXCHrkGHSZMCGgQ_BJ6BAheEAU",
   },
 
   {
@@ -63,6 +71,8 @@ const stores = [
     country: "United States",
     lat: 25.73437729734589,
     lng: -80.37646665767201,
+    mapLink:
+      "https://www.google.com/maps/place/Bustelo'+s+Optical/@25.7341985,-80.3764452,15z/data=!4m5!3m4!1s0x0:0x999768092f74816c!8m2!3d25.7341985!4d-80.3764452",
   },
   {
     id: 6,
@@ -72,6 +82,8 @@ const stores = [
     country: "United States",
     lat: 25.863230990415992,
     lng: -80.30694577236908,
+    mapLink:
+      "https://www.google.com/maps/place/Daluz+Optical+%26+Supplies+Inc./@25.8631768,-80.3069443,15z/data=!4m2!3m1!1s0x0:0x9030fd6100ad199a?sa=X&ved=2ahUKEwi9mrG5t5f6AhUeLbkGHVr_ABUQ_BJ6BAgrEAU",
   },
   // {
   //   id: 7,
@@ -90,6 +102,8 @@ const stores = [
     country: "United States",
     lat: 25.81225230488456,
     lng: -80.36503918650605,
+    mapLink:
+      "https://www.google.com/maps/place/Planet+Optical/@25.8121026,-80.365007,15z/data=!4m5!3m4!1s0x0:0xa6c4d9cc5581d281!8m2!3d25.8120132!4d-80.3650074",
   },
   {
     id: 30,
@@ -99,6 +113,8 @@ const stores = [
     country: "United States",
     lat: 25.75130232843454,
     lng: -80.21752310000001,
+    mapLink:
+      "https://www.google.com/maps/place/CORAL+EYES/@25.7511912,-80.2175231,15z/data=!4m5!3m4!1s0x0:0xcf4fb35b3ac46789!8m2!3d25.7511534!4d-80.2175223",
   },
 
   // Puerto Rico
@@ -111,6 +127,8 @@ const stores = [
     country: "Puerto Rico",
     lat: 18.336701609897467,
     lng: -66.06983208650803,
+    mapLink:
+      "https://www.google.com/maps/place/Eyewear+Shop/@18.3365524,-66.0694526,15z/data=!4m5!3m4!1s0x0:0x4758c31441dc4048!8m2!3d18.3365524!4d-66.0694526",
   },
   {
     id: 9,
@@ -120,6 +138,8 @@ const stores = [
     country: "Puerto Rico",
     lat: 18.446171129063842,
     lng: -67.14775951534399,
+    mapLink:
+      "https://www.google.com/maps/place/Cl%C3%ADnica+Visual+Dr.+Jorge+Luis+Malav%C3%A9+P%C3%A9rez/@18.4459116,-67.1477166,15z/data=!4m2!3m1!1s0x0:0xda75d4f5f6fda32b?sa=X&ved=2ahUKEwjt_oe2uZf6AhVYuZUCHZ32BSEQ_BJ6BAg5EAU",
   },
   {
     id: 10,
@@ -131,6 +151,8 @@ const stores = [
     country: "Puerto Rico",
     lat: 18.209202559824263,
     lng: -66.10415396092853,
+    mapLink:
+      "https://www.google.com/maps/place/C%C3%A0tala+Eye+Care+LLC/@18.2089274,-66.1041325,15z/data=!4m2!3m1!1s0x0:0xbd0f611775f51a93?sa=X&ved=2ahUKEwisuOXbuZf6AhU9u5UCHarUDPcQ_BJ6BAg1EAU",
   },
   {
     id: 11,
@@ -140,6 +162,8 @@ const stores = [
     country: "Puerto Rico",
     lat: 18.38564867965309,
     lng: -67.17752860325392,
+    mapLink:
+      "https://www.google.com/maps/place/Bright+Vision+Optometry/@18.3853738,-67.1775286,15z/data=!4m2!3m1!1s0x0:0x89f91bd570a9498d?sa=X&ved=2ahUKEwijysCEupf6AhWjqpUCHWqtDG0Q_BJ6BAg7EAU",
   },
   {
     id: 12,
@@ -149,6 +173,8 @@ const stores = [
     country: "Puerto Rico",
     lat: 18.244531645929158,
     lng: -66.03972827442006,
+    mapLink:
+      "https://www.google.com/maps/place/Anteojos+Di+Moda+Optica/@18.2442973,-66.039739,15z/data=!4m5!3m4!1s0x0:0x5ff4c8ec27fc59e6!8m2!3d18.2442973!4d-66.039739",
   },
   {
     id: 13,
@@ -158,6 +184,8 @@ const stores = [
     country: "Puerto Rico",
     lat: 18.21926576984875,
     lng: -66.22560685767073,
+    mapLink:
+      "https://www.google.com/maps/place/38+Cll+Georgetti,+Comer%C3%ADo,+00782,+Puerto+Rico/@18.2190059,-66.2255854,17z/data=!3m1!4b1!4m5!3m4!1s0x8c0347f2baaebf2b:0x8bf9bc9b4008fc5c!8m2!3d18.219005!4d-66.225585",
   },
 
   // Brazil
@@ -171,6 +199,8 @@ const stores = [
     country: "Brazil",
     lat: -15.814704279727808,
     lng: -47.81468779999999,
+    mapLink:
+      "https://www.google.com/maps/place/Shis+Qi+28+Conjunto+6+-+St.+de+Habita%C3%A7%C3%B5es+Individuais+Sul+QI+28+Conj.+6+-+Lago+Sul,+Bras%C3%ADlia+-+DF,+70297-400,+Brasil/@-15.8150088,-47.8146878,17z/data=!3m1!4b1!4m5!3m4!1s0x935a233b646c6227:0xd18a1fdc9851ff1e!8m2!3d-15.8150088!4d-47.8146878",
   },
 
   // Barbados
@@ -182,6 +212,8 @@ const stores = [
     country: "Barbados",
     lat: 13.09706731907493,
     lng: -59.6190027,
+    mapLink:
+      "https://www.google.com/maps/place/Insight+Optical/@13.0968113,-59.6190027,15z/data=!4m2!3m1!1s0x0:0xac579b9dc1dddf8b?sa=X&ved=2ahUKEwiZg7Phu5f6AhVxppUCHTiyCfQQ_BJ6BAhMEAU",
   },
 
   {
@@ -192,6 +224,8 @@ const stores = [
     country: "Barbados",
     lat: 13.09814,
     lng: -59.60203,
+    mapLink:
+      "https://www.google.com/maps/place/Belleville+Optical+Inc/@13.0981458,-59.6020317,15z/data=!4m5!3m4!1s0x0:0x73130ae376d097ed!8m2!3d13.0981913!4d-59.6020293",
   },
 
   // St. Vincent & the Grenadines
@@ -205,6 +239,8 @@ const stores = [
     country: "St Vincent and the Grenadines",
     lat: 13.139713166478865,
     lng: -61.195018457672,
+    mapLink:
+      "https://www.google.com/maps/place/OSV+Group+Inc/@13.1394154,-61.194997,15z/data=!4m5!3m4!1s0x0:0x6fbea816a2a09a17!8m2!3d13.1394154!4d-61.194997",
   },
 
   // Uruguay
@@ -217,6 +253,8 @@ const stores = [
     country: "Uruguay",
     lat: -34.91852917490241,
     lng: -56.155996073015984,
+    mapLink:
+      "https://www.google.com/maps/place/%C3%93PTICA+FORNIO/@-34.9187711,-56.1559317,15z/data=!4m5!3m4!1s0x0:0xba57691aac367b23!8m2!3d-34.9187711!4d-56.1559317",
   },
   {
     id: 19,
@@ -226,6 +264,8 @@ const stores = [
     country: "Uruguay",
     lat: -34.906613229589496,
     lng: -56.188870144176796,
+    mapLink:
+      "https://www.google.com/maps/place/Optica+Briozzo/@-34.9067862,-56.1888172,15z/data=!4m5!3m4!1s0x0:0xc2a74956410921a!8m2!3d-34.9067913!4d-56.1889216",
   },
   {
     id: 20,
@@ -235,6 +275,8 @@ const stores = [
     country: "Uruguay",
     lat: -34.90830823985922,
     lng: -56.15594294417999,
+    mapLink:
+      "https://www.google.com/maps/place/Enfoque+Visi%C3%B3n/@-34.9085238,-56.1558893,15z/data=!4m2!3m1!1s0x0:0x2e7a9e5bee2d505d?sa=X&ved=2ahUKEwiKmZbxvJf6AhWvkZUCHeWhDqIQ_BJ6BAg5EAU",
   },
 
   // Israel
@@ -248,6 +290,8 @@ const stores = [
     country: "Israel",
     lat: 32.070559718250934,
     lng: 34.782387684655994,
+    mapLink:
+      "https://www.google.com/maps/place/Belisima+Optician/@32.0703097,34.7824306,15z/data=!4m5!3m4!1s0x0:0x7cb741e62a118318!8m2!3d32.0703175!4d34.7824568",
   },
   {
     id: 22,
@@ -257,6 +301,8 @@ const stores = [
     country: "Israel",
     lat: 32.3292341165143,
     lng: 34.85674251349392,
+    mapLink:
+      "https://www.google.com/maps/place/Belisima/@32.3290664,34.8567747,15z/data=!4m5!3m4!1s0x0:0x1b88e88ec1e96169!8m2!3d32.3290664!4d34.8567747",
   },
   {
     id: 23,
@@ -266,6 +312,8 @@ const stores = [
     country: "Israel",
     lat: 31.99020613945152,
     lng: 34.76459569815249,
+    mapLink:
+      "https://www.google.com/maps/place/%D7%90%D7%95%D7%A4%D7%98%D7%99%D7%A7%D7%94+%D7%91%D7%9C%D7%99%D7%A1%D7%99%D7%9E%D7%94%E2%80%AD/@31.9903735,34.7647496,15z/data=!4m5!3m4!1s0x0:0x22cf4d8a1f1f4391!8m2!3d31.9903735!4d34.7647496",
   },
   {
     id: 24,
@@ -275,6 +323,8 @@ const stores = [
     country: "Israel",
     lat: 32.01543286886161,
     lng: 34.756070740481775,
+    mapLink:
+      "https://www.google.com/maps/place/Yoseftal+92,+Bat+Yam,+Israel/@32.0151827,34.7561673,17z/data=!3m1!4b1!4m5!3m4!1s0x1502b36b9bd64bd3:0x61f9b60ba5ee17ba!8m2!3d32.0151827!4d34.7561673",
   },
 
   // Japan
@@ -287,6 +337,8 @@ const stores = [
     country: "Japan",
     lat: 35.3146151885847,
     lng: 139.54545041349198,
+    mapLink:
+      "https://www.google.com/maps/place/Neu/@35.3144007,139.5454826,15z/data=!4m2!3m1!1s0x0:0x83f0f13f4ee30b73?sa=X&ved=2ahUKEwj_88a0vpf6AhXRpZUCHVEoC1YQ_BJ6BAhdEAU",
   },
 
   // Greece
@@ -299,6 +351,8 @@ const stores = [
     country: "Greece",
     lat: 37.933533524698554,
     lng: 23.756065099999997,
+    mapLink:
+      "https://www.google.com/maps/place/OPTIC+SHOP/@37.9333939,23.7560651,15z/data=!4m2!3m1!1s0x0:0x668c79ce57bfbb57?sa=X&ved=2ahUKEwiBiKvuvpf6AhWbRLgEHeIKAJYQ_BJ6BAgbEAU",
   },
   {
     id: 27,
@@ -308,6 +362,8 @@ const stores = [
     country: "Greece",
     lat: 40.63336901181343,
     lng: 22.94883121349393,
+    mapLink:
+      "https://www.google.com/maps/place/%CE%9F%CF%80%CF%84%CE%B9%CE%BA%CE%AC+%CE%93%CE%B1%CF%81%CF%85%CF%86%CE%AC%CE%BB%CE%BB%CE%BF%CF%85/@40.6332489,22.9488904,15z/data=!4m2!3m1!1s0x0:0xd50afc008a05a36f?sa=X&ved=2ahUKEwi1kfSBv5f6AhU4qJUCHZCAC3sQ_BJ6BAggEAU",
   },
 
   // Poland
@@ -319,6 +375,8 @@ const stores = [
     country: "Poland",
     lat: 53.02543863309232,
     lng: 18.590557286506073,
+    mapLink:
+      "https://www.google.com/maps/place/Okularownia+Toru%C5%84/@53.0253405,18.5905301,15z/data=!4m5!3m4!1s0x0:0x7d7a7816c32f8431!8m2!3d53.0253405!4d18.5905301",
   },
 ]
 
@@ -542,7 +600,7 @@ const MyComponent = () => {
                             <a
                               className={styles.lead}
                               target='_blank'
-                              href={`https://www.google.com/maps?daddr=@${selected.lat},${selected.lng}`}
+                              href={selected.mapLink}
                             >
                               <p>Directions</p>
                               <BiRightArrowAlt />
