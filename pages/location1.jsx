@@ -369,7 +369,7 @@ const stores = [
   // Poland
   {
     id: 28,
-    name: "OKULAROWNIA",
+    name: "OKULAROWNIA TORUŃ",
     address: "UL. JÓZEFA WYBICKIEGO 98/58 87-100 TORUŃ POLAND",
     tel: "+48 884 607 700",
     country: "Poland",
@@ -377,6 +377,19 @@ const stores = [
     lng: 18.590557286506073,
     mapLink:
       "https://www.google.com/maps/place/Okularownia+Toru%C5%84/@53.0253405,18.5905301,15z/data=!4m5!3m4!1s0x0:0x7d7a7816c32f8431!8m2!3d53.0253405!4d18.5905301",
+  },
+
+  // Denmark
+  {
+    id: 29,
+    name: "Brilleværk",
+    address: "Elmegade 3, 2200 København N",
+    tel: "+45 3152 5120",
+    country: "Denmark",
+    lat: 55.689811559730212,
+    lng: 12.557659684658566,
+    mapLink:
+      "https://www.google.com/maps/place/Brillev%C3%A6rk/@55.6894608,12.5577026,15z/data=!4m5!3m4!1s0x0:0xfef2fe671bcc14fc!8m2!3d55.6894608!4d12.5577026",
   },
 ]
 
