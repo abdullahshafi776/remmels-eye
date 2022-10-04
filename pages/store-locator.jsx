@@ -421,6 +421,20 @@ const stores = [
     mapLink:
       "https://www.google.com/maps/place/The+Eye+Room+Opticians+%7C+Fashionable+eyewear+in+Kenya/@-1.2925973,36.7878819,15z/data=!4m2!3m1!1s0x0:0x8366f2e433d61935?sa=X&ved=2ahUKEwj3s7adrrX6AhWXBhoKHXjnBeMQ_BJ6BAhHEAU",
   },
+
+  // USA
+
+  {
+    id: 35,
+    name: "Winthrop Eye Center",
+    address: "42 Woodside Ave, Winthrop, MA 02152, United States",
+    tel: "+1 617-213-2131",
+    country: "United States",
+    lat: 42.37536564689758,  
+    lng: -70.98675548465354,
+    mapLink:
+      "https://www.google.com/maps/place/Winthrop+Eye+Center/@42.3749535,-70.9867984,15z/data=!4m5!3m4!1s0x0:0x1ced1eaf749bb07e!8m2!3d42.3749535!4d-70.9867984?hl=en-US",
+  },
 ]
 
 const MyComponent = () => {
@@ -465,9 +479,6 @@ const MyComponent = () => {
         setCenter({ lat: Number(pos.lat), lng: Number(pos.lng) })
         setZoom(4)
 
-        // const val = stores.filter((shop) => shop.country == "Puerto Rico")
-        // setShops(val)
-
         const geocoder = new google.maps.Geocoder()
         geocodeLatLng(geocoder)
 
@@ -493,18 +504,11 @@ const MyComponent = () => {
     searchBox.addListener("places_changed", () => {
       const places = searchBox.getPlaces()
 
-      // console.log(places)
-
       if (places.length !== 0) {
         var latitude = Number(places[0].geometry.location.lat())
         var longitude = Number(places[0].geometry.location.lng())
 
         var address = places[0].formatted_address
-        // var new_address = places[0].address_components
-        //   ? places[0].address_components[
-        //       places[0].address_components.length - 1
-        //     ].long_name
-        //   : places[0].formatted_address
 
         var new_address = places[0].formatted_address
           ? places[0].formatted_address
@@ -514,9 +518,6 @@ const MyComponent = () => {
 
         setName(address)
         const val = stores.filter((shop) => shop.country == new_address)
-        // const val1 = stores.filter((shop) => shop.country == "Puerto Rico")
-        // console.log("val", val)
-        // val.length === 0 ? setNoshop("No Shop in this area") : setShops(val)
 
         if (val.length === 0) {
           setShops(val)
