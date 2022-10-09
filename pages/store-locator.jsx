@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import { GoPrimitiveDot } from "react-icons/go"
 import {
   GoogleMap,
@@ -390,7 +390,7 @@ const stores = [
     name: "Eyecare Consultants",
     address: "ABC Place Nairobi Waiyaki Way, Nairobi, Kenya",
     tel: "+254 722 733 000",
-    phone:'+254 733 698 751',
+    phone: "+254 733 698 751",
     country: "Kenya",
     lat: -1.258783780522897,
     lng: 36.776967723267674,
@@ -402,9 +402,9 @@ const stores = [
     name: "Eyecare Consultants",
     address: "Eco Bank Towers, Muindi Mbingu St, Nairobi, Kenya",
     tel: "+254 733 698 752",
-    phone:'+254 722 908 703',
+    phone: "+254 722 908 703",
     country: "Kenya",
-    lat: -1.2852907137573197, 
+    lat: -1.2852907137573197,
     lng: 36.82118719207879,
     mapLink:
       "https://www.google.com/maps/place/Eyecare+Consultants+Ltd/@-1.2861059,36.8209297,15z/data=!4m5!3m4!1s0x0:0x5333920164fbe7a6!8m2!3d-1.2861059!4d36.8209297",
@@ -414,9 +414,9 @@ const stores = [
     name: "The Eye Room Opticians",
     address: "Yaya Centre Argwings Kodhek Rd, Nairobi, Kenya",
     tel: "+254 711 884 893",
-    phone:'+254 782 337 424',
+    phone: "+254 782 337 424",
     country: "Kenya",
-    lat: -1.291696306960724,  
+    lat: -1.291696306960724,
     lng: 36.788010646039396,
     mapLink:
       "https://www.google.com/maps/place/The+Eye+Room+Opticians+%7C+Fashionable+eyewear+in+Kenya/@-1.2925973,36.7878819,15z/data=!4m2!3m1!1s0x0:0x8366f2e433d61935?sa=X&ved=2ahUKEwj3s7adrrX6AhWXBhoKHXjnBeMQ_BJ6BAhHEAU",
@@ -430,7 +430,7 @@ const stores = [
     address: "42 Woodside Ave, Winthrop, MA 02152, United States",
     tel: "+1 617-213-2131",
     country: "United States",
-    lat: 42.37536564689758,  
+    lat: 42.37536564689758,
     lng: -70.98675548465354,
     mapLink:
       "https://www.google.com/maps/place/Winthrop+Eye+Center/@42.3749535,-70.9867984,15z/data=!4m5!3m4!1s0x0:0x1ced1eaf749bb07e!8m2!3d42.3749535!4d-70.9867984?hl=en-US",
@@ -439,16 +439,11 @@ const stores = [
 
 const MyComponent = () => {
   const [libraries] = useState(["places"])
-  
   const [name, setName] = useState("")
- 
   const [zoom, setZoom] = useState(2)
-  
-
   const [selected, setSelected] = useState(null)
   const [noshop, setNoshop] = useState("Search to find nearest stores.")
   const [shops, setShops] = useState([])
-
   const [center, setCenter] = useState({
     lat: parseFloat(15.4542),
     lng: parseFloat(18.7322),
@@ -468,7 +463,7 @@ const MyComponent = () => {
     setSelected(shop)
   }
 
-  const nav = () => {
+  const findCurrentLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         const pos = {
@@ -535,14 +530,14 @@ const MyComponent = () => {
         } else {
           setZoom(4)
         }
-
       }
     })
   }
 
   useEffect(() => {
     setTimeout(() => {
-      nav()
+      findCurrentLocation()
+      initAutocomplete()
     }, 3000)
   }, [])
 
@@ -563,10 +558,9 @@ const MyComponent = () => {
                       name='name'
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      onFocus={initAutocomplete}
                       autoComplete='off'
                     />
-                    <button id='home' onClick={nav}>
+                    <button id='home' onClick={findCurrentLocation}>
                       <BiCurrentLocation />
                     </button>
                   </div>
@@ -689,4 +683,4 @@ const MyComponent = () => {
   )
 }
 
-export default React.memo(MyComponent)
+export default MyComponent
