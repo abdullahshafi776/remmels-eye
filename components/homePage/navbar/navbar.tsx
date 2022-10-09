@@ -171,8 +171,8 @@ export const Navbar: React.FC<Props> = () => {
               </a>
             </Menu.Item>
             <Menu.Item key="six">
-              <Link href="/store">
-                <a className="mobile-menu">Store</a>
+              <Link href="/store-locator">
+                <a className="mobile-menu">Stores</a>
               </Link>
             </Menu.Item>
           </Menu.SubMenu>
